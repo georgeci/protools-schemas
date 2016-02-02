@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "settings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/settingsItem"
+      }
+    },
+    "versionDeprecation": {
+      "$ref": "#/definitions/deprecation"
+    }
+  },
+  "definitions": {
+    "settingsItem": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "deprecation": {
+      "type": "object",
+      "properties": {
+        "description" : {
+          "type": "string"
+        },
+        "button" : {
+          "$ref": "#/definitions/settingsItem"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
